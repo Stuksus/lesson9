@@ -107,29 +107,41 @@ class Product
 }
 
 $firstProduct = new Product();
-$firstProduct->addProduct('bread',100);
+$firstProduct->addProduct('bread', 100);
 echo '<br>';
 
 
-
 $secondProduct = new Product();
-$secondProduct->addProduct('butter',50);
+$secondProduct->addProduct('butter', 50);
 
 
-class News{
+class News
+{
+    private $number = 0;
     public $textNews;
     public $numberNews = 0;
-    public function newNews(){
+    
+
+    public function newNews()
+    {
         $this->numberNews++;
 
         echo "Article №$this->numberNews";
-        echo'<br>';
+        echo '<br>';
         echo "$this->textNews";
-        echo'<br>';
-        echo'<br>';
+        echo '<br>';
+        echo '<br>';
+    }
+
+    public function getComments($comment){
+        $this->number++;
+        echo "Comment №$this->number";
+        echo " <br>  $comment<br>";
+        echo '<br>';
     }
 
 }
+
 $firstNews = new News();
 echo "<h1>News</h1>";
 $text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -147,3 +159,13 @@ $firstNews->newNews();
 $firstNews->newNews();
 $firstNews->newNews();
 
+$secondComment = new News();
+echo "<h1>Comments</h1>";
+$secondComment->getComments("Good");
+$secondComment->getComments("Nice");
+$secondComment->getComments("Good job");
+$secondComment->getComments("Bad");
+$secondComment->getComments("Good");
+$secondComment->getComments("Good");
+$secondComment->getComments("Good");
+$secondComment->getComments("Bad");
